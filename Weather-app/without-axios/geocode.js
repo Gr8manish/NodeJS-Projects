@@ -5,7 +5,6 @@ var geocodeAddress = (address, callback) => {
     var encodedAddress = encodeURIComponent(address);
     var keys = fs.readFileSync("../keys.json",'utf8');
     keys = JSON.parse(keys);
-    console.log(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&key=${keys.googleMapsKey}`);
     request({
         url:`https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&key=${keys.googleMapsKey}`,
         json: true   
